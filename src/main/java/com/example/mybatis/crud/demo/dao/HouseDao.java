@@ -11,6 +11,6 @@ public interface  HouseDao {
     House findById(@Param("id")Long id);
     House deleteById(@Param("id")Long id);
     House addOneHouse(@Param("numOfRoom")int numOfRoom,@Param("direction")String direction);
-    House modifyHouseDirection(@Param("id")Long id,@Param("direction")String direction);
+    House modifyHouseDirectionById(@Param("id")Long id,@Param("direction")String direction);
 
 }

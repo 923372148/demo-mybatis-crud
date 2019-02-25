@@ -17,7 +17,7 @@ public interface HouseService {
     House findById(Long id);
     House deleteById(Long id);
     House addOneHouse(int numOfRoom,String direction);
-    House modifyHouseDirection(Long id,String direction);
+    House modifyHouseDirectionById(Long id,String direction);
 
 
 }
