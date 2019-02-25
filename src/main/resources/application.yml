@@ -1,0 +1,18 @@
+spring:
+  datasource:
+  #  driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/housedb?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd
+    ## Mybatis 配置
+mybatis:
+  type-aliases-package: com.example.mybatis.crud.demo.domain
+  mapper-locations: classpath:mapper/*.xml

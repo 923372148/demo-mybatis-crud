@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mybatis.crud.demo.dao.HouseDao">
+	<resultMap id="BaseResultMap" type="com.example.mybatis.crud.demo.domain.House">
+		<result column="id" property="id" />
+		<result column="direction" property="direction" />
+		<result column="num_of_room" property="numOfRoom" />
+	</resultMap>
+	<parameterMap id="house" type="com.example.mybatis.crud.demo.domain.House"/>
+
+	<sql id="Base_Column_List">
+		id, direction,num_of_room
+	</sql>
+
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from house
+		where id = #{id}
+	</select>
+
+</mapper>
