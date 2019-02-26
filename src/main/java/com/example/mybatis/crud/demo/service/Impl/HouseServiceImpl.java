@@ -5,6 +5,9 @@ import com.example.mybatis.crud.demo.domain.House;
 import com.example.mybatis.crud.demo.service.HouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 //实现房屋逻辑服务接口
 @Service
 public class HouseServiceImpl  implements HouseService {
@@ -22,19 +25,23 @@ private final HouseDao houseDao;
     }
 
     @Override
-    public House deleteById(Long id) {
-        return null;
+    public     boolean deleteById(Long id) {
+        return houseDao.deleteById(id);
     }
 
     @Override
-    public House addOneHouse(int numOfRoom, String direction) {
-        return null;
+    public     boolean  addOneHouse(int numOfRoom, String direction) {
+        return houseDao.addOneHouse(numOfRoom,direction);
+
     }
 
     @Override
-    public House modifyHouseDirectionById(Long id, String direction) {
-        return null;
+    public     boolean  modifyHouseDirectionById(Long id, String direction) {
+        return houseDao.modifyHouseDirectionById(id,direction);
     }
-
+@Override
+public List<House> selestAll(){
+    return  houseDao.selestAll();
+}
 
 }

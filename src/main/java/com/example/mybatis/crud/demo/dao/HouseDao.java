@@ -5,12 +5,15 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface  HouseDao {
 
     House findById(@Param("id")Long id);
-    House deleteById(@Param("id")Long id);
-    House addOneHouse(@Param("numOfRoom")int numOfRoom,@Param("direction")String direction);
-    House modifyHouseDirectionById(@Param("id")Long id,@Param("direction")String direction);
+    boolean  deleteById(@Param("id")Long id);
+    boolean addOneHouse(@Param("numOfRoom")int numOfRoom,@Param("direction")String direction);
+  boolean modifyHouseDirectionById(@Param("id")Long id,@Param("direction")String direction);
+    List<House> selestAll();
 
 }
